@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: "app-employee-add",
   templateUrl: "./employee-add.component.html",
@@ -12,7 +13,7 @@ export class EmployeeAddComponent implements OnInit {
   public imagePath;
   imgURL: any = "";
   public message: string;
-  constructor() {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.newEmployeeForm = new FormGroup({
@@ -31,6 +32,9 @@ export class EmployeeAddComponent implements OnInit {
   }
   onAddNewEmployee() {
     console.log(this.newEmployeeForm);
+   alert(" Added Successfully")
+    this.router.navigate(['/dashboard'])
+
   }
 
   preview(files) {
