@@ -1,0 +1,39 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/dashboard']"
+        routerLinkActive="active"
+      >
+        <span class="menu-title"
+          ><fa-icon [icon]="faTachometerAlt"></fa-icon> Dashboard</span
+        >
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/employee-list']"
+        routerLinkActive="active"
+      >
+        <span class="menu-title"
+          ><fa-icon [icon]="faList"></fa-icon> Employee List</span
+        >
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/employee-add']"
+        routerLinkActive="active"
+      >
+        <span class="menu-title"
+          ><fa-icon [icon]="faUserPlus"></fa-icon> Add Employee</span
+        >
+      </a>
+    </li>
+  </ul>
+</nav>

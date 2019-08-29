@@ -1,0 +1,91 @@
+<div class="container-scroller">
+  <!-- partial:partials/_navbar.html -->
+  <app-dashboard-header></app-dashboard-header>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <app-dashboard-side-bar></app-dashboard-side-bar>
+    <!-- partial -->
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h4 class="font-weight-bold mb-0">Dashboard</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title text-md-center text-xl-left">
+                  Total Users
+                </p>
+                <div
+                  class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center"
+                >
+                  <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                    {{ "Count Total Users" }}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title text-md-center text-xl-left">
+                  Current Users Active
+                </p>
+                <div
+                  class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center"
+                >
+                  <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                    {{ "Count Current Users" }}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title text-md-center text-xl-left">
+                  Total Deleted Users
+                </p>
+                <div
+                  class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center"
+                >
+                  <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                    {{ "Count Total Deleted Users" }}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title">Recently Added Users</p>
+                <!-- <app-employee-recent></app-employee-recent> -->
+                <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
+                <canvas id="sales-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:partials/_footer.html -->
+      <!-- <app-employee-recent></app-employee-recent> -->
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>

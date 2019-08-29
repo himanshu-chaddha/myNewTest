@@ -1,0 +1,15 @@
+img {
+  height: 250px;
+  width: 100%;
+}
+.home {
+  background: rgb(74, 75, 79);
+  background: linear-gradient(
+    90deg,
+    rgba(74, 75, 79, 0.738532913165266) 24%,
+    rgba(115, 104, 98, 1) 71%
+  );
+}
+hr {
+  width: 50%;
+}
