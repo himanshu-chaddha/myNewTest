@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard-header.component';
 import { DashboardFooterComponent } from './dashboard/dashboard-footer/dashboard-footer.component';
 import { DashboardSideBarComponent } from './dashboard/dashboard-side-bar/dashboard-side-bar.component';
+import { EmployeeRecentComponent } from './employees/employee-recent/employee-recent.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DashboardSideBarComponent } from './dashboard/dashboard-side-bar/dashbo
     PageNotFoundComponent,
     DashboardHeaderComponent,
     DashboardFooterComponent,
-    DashboardSideBarComponent
+    DashboardSideBarComponent,
+    EmployeeRecentComponent
   ],
   imports: [
     BrowserModule,
