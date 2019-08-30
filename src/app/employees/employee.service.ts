@@ -1,26 +1,27 @@
-import { Injectable, ElementRef } from '@angular/core';
-import { Employee } from './employee.model';
-import { Observable, of } from 'rxjs';
-import { EMPLOYEES } from './mock-employee';
+import { Injectable, ElementRef } from "@angular/core";
+import { Employee } from "./employee.model";
+import { Observable, of } from "rxjs";
+import { EMPLOYEES } from "./mock-employee";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
-export class EmployeeService{
-    employees: Employee[];
-    constructor(){}
+export class EmployeeService {
+  totalEmployees = 0;
+  employees: Employee[];
+  constructor() {}
 
-    getEmployee(): Observable<Employee[]>{
-        return of(EMPLOYEES);
-    }
+  getEmployee(): Observable<Employee[]> {
+    let a = [1, 2, 3];
+    return of(EMPLOYEES);
+  }
 
-    addEmployee(data: Employee){
-        this.employees.push(data)
-    }
+  addEmployee(data: Employee) {
+    this.employees.push(data);
+  }
 
-    editEmployee(data: ElementRef){
-        // to do
-        this.employees; 
-
-    }
+  editEmployee(data: ElementRef) {
+    // to do
+    this.employees;
+  }
 }

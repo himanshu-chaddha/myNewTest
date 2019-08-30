@@ -2,14 +2,18 @@
   <div
     class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
   >
-    <a class="navbar-brand brand-logo mr-5"
-      ><fa-icon [icon]="faHome"></fa-icon> {{ "Current Path" }}</a
-    >
+    <a class="navbar-brand brand-logo mr-5" [routerLink]="['/dashboard']"
+      ><fa-icon [icon]="faHome"></fa-icon>
+      <p>Dashboard</p>
+    </a>
   </div>
   <div
     class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
   >
     <ul class="navbar-nav mr-lg-2">
+      <li class="nav-item nav-search d-none d-lg-block">
+        <p>{{ "Current Path" }}</p>
+      </li>
       <li class="nav-item nav-search d-none d-lg-block">
         <p>{{ "Logged In User Name ?" }}</p>
       </li>

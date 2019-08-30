@@ -15,10 +15,10 @@ import { EmployeeAddComponent } from "./employees/employee-add/employee-add.comp
 import { EmployeeDetailComponent } from "./employees/employee-detail/employee-detail.component";
 import { EmployeeEditComponent } from "./employees/employee-edit/employee-edit.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard-header.component';
-import { DashboardFooterComponent } from './dashboard/dashboard-footer/dashboard-footer.component';
-import { DashboardSideBarComponent } from './dashboard/dashboard-side-bar/dashboard-side-bar.component';
-import { EmployeeRecentComponent } from './employees/employee-recent/employee-recent.component';
+import { DashboardHeaderComponent } from "./dashboard/dashboard-header/dashboard-header.component";
+import { DashboardFooterComponent } from "./dashboard/dashboard-footer/dashboard-footer.component";
+import { DashboardSideBarComponent } from "./dashboard/dashboard-side-bar/dashboard-side-bar.component";
+import { EmployeeRecentComponent } from "./employees/employee-recent/employee-recent.component";
 
 @NgModule({
   declarations: [
