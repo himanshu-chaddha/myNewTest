@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.userLoginForm = new FormGroup({
+      userRole: new FormControl("admin"),
       email: new FormControl(null),
       password: new FormControl(null)
     });

@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { JwPaginationComponent } from "jw-angular-pagination";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
@@ -19,6 +20,15 @@ import { DashboardHeaderComponent } from "./dashboard/dashboard-header/dashboard
 import { DashboardFooterComponent } from "./dashboard/dashboard-footer/dashboard-footer.component";
 import { DashboardSideBarComponent } from "./dashboard/dashboard-side-bar/dashboard-side-bar.component";
 import { EmployeeRecentComponent } from "./employees/employee-recent/employee-recent.component";
+import { EmployeeService } from "./employees/employee.service";
+import { UsersComponent } from "./users/users.component";
+import { UserAddComponent } from "./users/user-add/user-add.component";
+import { UserListComponent } from "./users/user-list/user-list.component";
+import { UserEditComponent } from "./users/user-edit/user-edit.component";
+import { UserDetailComponent } from "./users/user-detail/user-detail.component";
+import { UserRecentComponent } from "./users/user-recent/user-recent.component";
+import { UserService } from "./users/user.service";
+import { EmployeeComponent } from './employees/employee-list/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +47,15 @@ import { EmployeeRecentComponent } from "./employees/employee-recent/employee-re
     DashboardHeaderComponent,
     DashboardFooterComponent,
     DashboardSideBarComponent,
-    EmployeeRecentComponent
+    EmployeeRecentComponent,
+    JwPaginationComponent,
+    UsersComponent,
+    UserAddComponent,
+    UserListComponent,
+    UserEditComponent,
+    UserDetailComponent,
+    UserRecentComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +63,7 @@ import { EmployeeRecentComponent } from "./employees/employee-recent/employee-re
     ReactiveFormsModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [EmployeeService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

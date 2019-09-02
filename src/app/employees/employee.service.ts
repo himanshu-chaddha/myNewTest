@@ -1,27 +1,149 @@
-import { Injectable, ElementRef } from "@angular/core";
 import { Employee } from "./employee.model";
-import { Observable, of } from "rxjs";
-import { EMPLOYEES } from "./mock-employee";
+import { EventEmitter } from "@angular/core";
 
-@Injectable({
-  providedIn: "root"
-})
 export class EmployeeService {
-  totalEmployees = 0;
-  employees: Employee[];
+  employeeSelected = new EventEmitter<Employee>();
+
+  private employees: Employee[] = [
+    new Employee(
+      1,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      2,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      3,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      4,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      5,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      6,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      7,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      8,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      9,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    ),
+    new Employee(
+      10,
+      "abc@test.com",
+      "Jack",
+      "Cyro",
+      "../../assets/images/Default-profile.jpg",
+      "male",
+      "Test Address",
+      9999999999
+    )
+  ];
+  totalEmployees = this.employees.length;
+  totalActiveEmployees = this.employees.length;
+  totalDeletedEmployees = this.totalEmployees - this.totalActiveEmployees;
+
   constructor() {}
 
-  getEmployee(): Observable<Employee[]> {
-    let a = [1, 2, 3];
-    return of(EMPLOYEES);
+  addEmployee(
+    id: number,
+    email: string,
+    firstName: string,
+    lastName: string,
+    imagePath: string,
+    gender: string,
+    address: string,
+    mobile: number
+  ) {
+    const newEmp = {
+      id: id,
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      imagePath: imagePath,
+      gender: gender,
+      address: address,
+      mobile: mobile
+    };
+    this.employees.push(newEmp);
   }
 
-  addEmployee(data: Employee) {
-    this.employees.push(data);
+  editEmployeeData(id: number, mobile: number) {
+    this.employees[id].mobile = mobile;
   }
 
-  editEmployee(data: ElementRef) {
-    // to do
-    this.employees;
+  getEmployees() {
+    return this.employees.slice();
+  }
+
+  getEmployee(id: number) {
+    return this.employees[id];
   }
 }

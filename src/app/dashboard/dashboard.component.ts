@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { EmployeeService } from "../employees/employee.service";
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
@@ -8,7 +9,18 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 })
 export class DashboardComponent implements OnInit {
   faEye = faEye;
-  constructor(private router: Router) {}
+  totalEmp: number;
+  currentEmp: number;
+  deletedEmp: number;
+  constructor(private router: Router, private empService: EmployeeService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.totalEmp = this.empService.totalEmployees;
+    this.currentEmp = this.empService.totalActiveEmployees;
+    this.deletedEmp = this.empService.totalDeletedEmployees;
+    console.log("total emp", this.totalEmp);
+  }
+  onViewMore() {
+    this.router.navigate(["/employee-list"]);
+  }
 }

@@ -8,15 +8,30 @@ import { EmployeeAddComponent } from "./employees/employee-add/employee-add.comp
 import { EmployeeDetailComponent } from "./employees/employee-detail/employee-detail.component";
 import { EmployeeEditComponent } from "./employees/employee-edit/employee-edit.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { EmployeesComponent } from "./employees/employees.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "dashboard", component: DashboardComponent },
-  { path: "employee-list", component: EmployeeListComponent },
+
   { path: "employee-add", component: EmployeeAddComponent },
-  { path: "employee-detail", component: EmployeeDetailComponent },
-  { path: "employee-edit", component: EmployeeEditComponent },
+
+  {
+    path: "employees/employee-list",
+    component: EmployeesComponent,
+    children: [
+      {
+        path: "employee-list",
+        component: EmployeeListComponent,
+        children: [
+          { path: "employee-edit", component: EmployeeEditComponent },
+          { path: "employee-detail", component: EmployeeDetailComponent }
+        ]
+      },
+      { path: "employee-add", component: EmployeeAddComponent }
+    ]
+  },
   { path: "**", component: PageNotFoundComponent }
 ];
 

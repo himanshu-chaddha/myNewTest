@@ -11,72 +11,17 @@
     <p><a [routerLink]="['/employee-detail']">Emp 1</a></p>
   </div>
 </div> -->
-<div class="container-scroller">
-  <app-dashboard-header></app-dashboard-header>
-  <div class="container-fluid page-body-wrapper">
-    <div class="content-wrapper">
-      <div class="row">
-        <div class="col-md-9 grid-margin">
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <h4 class="font-weight-bold mb-0">All Employees</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 grid-margin">
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <button
-                type="button"
-                (click)="onAddEmployee()"
-                class="btn btn-secondary"
-              >
-                <fa-icon [icon]="faUserPlus"></fa-icon> Add New Employee
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>Emp Id</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Email</th>
-                      <th>Mobile Number</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      *ngFor="let employee of employees"
-                      (click)="onEmployeeSelect(employee)"
-                    >
-                      <td>{{ employee.id }}</td>
-                      <td>
-                        <a [routerLink]="['/employee-detail']">
-                          {{ employee.firstName }}</a
-                        >
-                      </td>
-                      <td>{{ employee.lastName }}</td>
-                      <td>
-                        {{ employee.email }}
-                      </td>
-                      <td>{{ employee.mobile }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+<div class="row">
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <app-employee
+            *ngFor="let employee of employees"
+            [employee]="employee"
+          ></app-employee>
         </div>
       </div>
     </div>
   </div>
-  <app-dashboard-footer></app-dashboard-footer>
 </div>

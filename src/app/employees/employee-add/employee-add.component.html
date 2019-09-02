@@ -1,6 +1,6 @@
-<div class="container-scroller">
+<!-- <div class="container-scroller">
     <app-dashboard-header></app-dashboard-header>
-    <div class="container-fluid page-body-wrapper">
+    <div class="container-fluid page-body-wrapper"> -->
 <div class="content-wrapper">
   <div class="row">
     <div class="col-md-12 grid-margin">
@@ -60,7 +60,7 @@
                       type="text"
                       class="form-control"
                       placeholder="Employee ID"
-                      formControlName="empId"
+                      formControlName="id"
                     />
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                         type="text"
                         class="form-control"
                         placeholder="First Name"
-                        formControlName="firstname"
+                        formControlName="firstName"
                       />
                     </div>
                   </div>
@@ -102,7 +102,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Last Name"
-                        formControlName="lastname"
+                        formControlName="lastName"
                       />
                     </div>
                   </div>
@@ -121,7 +121,7 @@
                       #file
                       accept="image/*"
                       (change)="preview(file.files)"
-                      formControlName="profilePicture"
+                      formControlName="imagePath"
                     />
                   </div>
                 </div>
@@ -132,7 +132,7 @@
                   <div class="col-sm-9">
                     <select class="form-control" formControlName="gender">
                       <option value="male">Male</option>
-                      <option value="female" >Female</option>
+                      <option value="female">Female</option>
                     </select>
                   </div>
                 </div>
@@ -174,22 +174,20 @@
               <div class="col-md-5"></div>
               <div class="col-md-7">
                 <div class="col-md-4">
-                  <button class="btn btn-secondary" type="submit" >
+                  <button class="btn btn-secondary" type="submit">
                     <fa-icon [icon]="faUserPlus"></fa-icon> Add Employee
                   </button>
                 </div>
               </div>
             </div>
-
-
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
+<!-- </div>
 
  
 <app-dashboard-footer></app-dashboard-footer>
-</div>
+</div> -->

@@ -3,35 +3,9 @@
     <div class="card">
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Emp Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Mobile Number</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="let employee of employees; let i = index"
-                (click)="onEmployeeSelect(employee)"
-              >
-                <td>{{ employee.id }}</td>
-                <td>
-                  <a [routerLink]="['/employee-detail']">
-                    {{ employee.firstName }}</a
-                  >
-                </td>
-                <td>{{ employee.lastName }}</td>
-                <td>
-                  {{ employee.email }}
-                </td>
-                <td>{{ employee.mobile }}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div *ngFor="let employee of employees; let i = index">
+            <app-employee *ngIf="i < 5" [employee]="employee"></app-employee>
+          </div>
         </div>
       </div>
     </div>

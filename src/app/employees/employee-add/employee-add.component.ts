@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from "@angular/router";
+import { EmployeeService } from "../employee.service";
 @Component({
   selector: "app-employee-add",
   templateUrl: "./employee-add.component.html",
@@ -13,28 +14,51 @@ export class EmployeeAddComponent implements OnInit {
   public imagePath;
   imgURL: any = "";
   public message: string;
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private employeeService: EmployeeService
+  ) {}
 
   ngOnInit() {
     this.newEmployeeForm = new FormGroup({
-      empId: new FormControl(null),
+      id: new FormControl(null),
       username: new FormGroup({
-        firstname: new FormControl(null),
-        lastname: new FormControl(null)
+        firstName: new FormControl(null),
+        lastName: new FormControl(null)
       }),
       gender: new FormControl("male"),
       email: new FormControl(null),
       address: new FormControl(null),
       mobile: new FormControl(null),
-      profilePicture: new FormControl(null)
+      imagePath: new FormControl(null)
     });
-    console.log(this.newEmployeeForm);
   }
-  onAddNewEmployee() {
+  onAddNewEmployee(
+    id: number,
+    email: string,
+    firstName: string,
+    lastName: string,
+    imagePath: string,
+    gender: string,
+    address: string,
+    mobile: number
+  ) {
     console.log(this.newEmployeeForm);
-   alert(" Added Successfully")
-    this.router.navigate(['/dashboard'])
 
+    this.employeeService.addEmployee(
+      id,
+      email,
+      firstName,
+      lastName,
+      imagePath,
+      gender,
+      address,
+      mobile
+    );
+
+    this.employeeService.getEmployees();
+    this.router.navigate(["/dashboard"]);
   }
 
   preview(files) {

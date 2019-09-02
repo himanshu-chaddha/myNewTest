@@ -1,1 +1,31 @@
-<p>employees works!</p>
+<div class="container-scroller">
+  <app-dashboard-header></app-dashboard-header>
+  <div class="container-fluid page-body-wrapper">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-9 grid-margin">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h4 class="font-weight-bold mb-0">All Employees</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <button
+                type="button"
+                (click)="onAddEmployee()"
+                class="btn btn-secondary"
+              >
+                <fa-icon [icon]="faUserPlus"></fa-icon> Add New Employee
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-dashboard-footer></app-dashboard-footer>
+</div>

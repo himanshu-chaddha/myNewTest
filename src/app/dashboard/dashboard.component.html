@@ -28,7 +28,7 @@
                   class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center"
                 >
                   <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
-                    {{ "Count Total Users" }}
+                    {{ totalEmp }}
                   </h3>
                 </div>
               </div>
@@ -44,7 +44,7 @@
                   class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center"
                 >
                   <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
-                    {{ "Count Current Users" }}
+                    {{ currentEmp }}
                   </h3>
                 </div>
               </div>
@@ -60,7 +60,7 @@
                   class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center"
                 >
                   <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
-                    {{ "Count Total Deleted Users" }}
+                    {{ deletedEmp }}
                   </h3>
                 </div>
               </div>
@@ -76,18 +76,17 @@
                 <div id="sales-legend" class="chartjs-legend mt-4 mb-2">
                   <app-employee-recent></app-employee-recent>
                 </div>
-                <canvas id="sales-chart"></canvas>
+
+                <div class="col-md-4">
+                  <button
+                    class="btn btn-secondary"
+                    type="button"
+                    (click)="onViewMore()"
+                  >
+                    <fa-icon [icon]="faEye"></fa-icon> View More
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-5"></div>
-          <div class="col-md-7">
-            <div class="col-md-4">
-              <button class="btn btn-secondary" type="submit">
-                <fa-icon [icon]="faEye"></fa-icon> View More
-              </button>
             </div>
           </div>
         </div>

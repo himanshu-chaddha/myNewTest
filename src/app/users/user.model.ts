@@ -1,4 +1,4 @@
-export class Employee {
+export class User {
   public id: number;
   public email: string;
   public firstName: string;
@@ -22,7 +22,6 @@ export class Employee {
     this.email = email;
     this.firstName = firstName;
     this.lastName = lastName;
-
     this.imagePath = imagePath;
     this.gender = gender;
     this.address = address;
