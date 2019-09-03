@@ -18,7 +18,7 @@ const routes: Routes = [
     path: "dashboard",
     component: DashboardComponent,
     canActivate: [AuthGuard]
-  },
+   },
 
   { path: "employee-add", component: EmployeeAddComponent },
 
