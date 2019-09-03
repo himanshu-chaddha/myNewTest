@@ -9,11 +9,16 @@ import { EmployeeDetailComponent } from "./employees/employee-detail/employee-de
 import { EmployeeEditComponent } from "./employees/employee-edit/employee-edit.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { EmployeesComponent } from "./employees/employees.component";
+import { AuthGuard } from "./shared/auth.guard";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
-  { path: "dashboard", component: DashboardComponent },
+  {
+    path: "dashboard",
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
 
   { path: "employee-add", component: EmployeeAddComponent },
 

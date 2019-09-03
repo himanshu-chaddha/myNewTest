@@ -28,7 +28,10 @@ import { UserEditComponent } from "./users/user-edit/user-edit.component";
 import { UserDetailComponent } from "./users/user-detail/user-detail.component";
 import { UserRecentComponent } from "./users/user-recent/user-recent.component";
 import { UserService } from "./users/user.service";
-import { EmployeeComponent } from './employees/employee-list/employee/employee.component';
+import { EmployeeComponent } from "./employees/employee-list/employee/employee.component";
+import { HttpClientModule } from "@angular/common/http";
+import { AuthService } from "./shared/auth.service";
+import { AuthGuard } from "./shared/auth.guard";
 
 @NgModule({
   declarations: [
@@ -61,9 +64,10 @@ import { EmployeeComponent } from './employees/employee-list/employee/employee.c
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [EmployeeService, UserService],
+  providers: [EmployeeService, UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

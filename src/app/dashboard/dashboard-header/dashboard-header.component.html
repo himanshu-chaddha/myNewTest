@@ -20,7 +20,7 @@
     </ul>
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item nav-profile dropdown">
-        <a [routerLink]="['/']">
+        <a (click)="logout()" [routerLink]="['/']">
           <fa-icon [icon]="faSignOutAlt"></fa-icon> Logout</a
         >
       </li>
