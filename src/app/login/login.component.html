@@ -11,6 +11,16 @@
   style="background-image: url('../../assets/images/loginPage.jpg');"
 >
   <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+    <div class="alert alert-info" *ngIf="roleSelected == 'admin'; else user">
+      <strong>Username:</strong> admin1@gmail.com<br />
+      <hr />
+      <strong>Password:</strong> adminpass
+    </div>
+    <ng-template #user>
+      <div class="alert alert-info">
+        <strong>Please Enter Your Credentials!</strong>
+      </div>
+    </ng-template>
     <form
       class="login100-form validate-form"
       [formGroup]="userLoginForm"
@@ -23,7 +33,12 @@
         class="wrap-input100 validate-input m-b-20"
         data-validate="Enter username or email"
       >
-        <select class="input100" formControlName="userRole">
+        <select
+          class="input100"
+          formControlName="userRole"
+          #userRoleInput
+          (click)="onUserSelect()"
+        >
           <option value="admin">Admin</option>
           <option value="user">User</option>
         </select>

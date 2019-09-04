@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
@@ -10,6 +10,8 @@ import { AuthService } from "../shared/auth.service";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
+  roleSelected = "admin";
+  @ViewChild("userRoleInput", { static: true }) userRoleInput: ElementRef;
   userLoginForm: FormGroup;
   loginData: any;
   constructor(
@@ -49,5 +51,8 @@ export class LoginComponent implements OnInit {
     } else {
       console.log("Not Matched");
     }
+  }
+  onUserSelect() {
+    this.roleSelected = this.userRoleInput.nativeElement.value;
   }
 }
